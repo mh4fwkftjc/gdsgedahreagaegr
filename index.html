@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шаги пользователя</title>
+</head>
+<body>
+    <h1>Ты прошел {{ steps }} шагов</h1>
+    <button onclick="shareWithFriends()">Поделиться с друзьями</button>
+    <script>
+        function shareWithFriends() {
+            const user_id = '{{ user_id }}';
+            const url = `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=Я прошел ${user_id} шагов! Присоединяйся ко мне!`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
